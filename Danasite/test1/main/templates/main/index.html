@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Dana {% endblock %}
+
+{% block body %}
+
+    <main>
+        {% for el in news %}
+            <div class="news">
+            {% if el.photos %}
+                <img src="" alt="">
+            {% else %}
+                <span class="none_photos">Не загрузили фото</span>
+            {% endif %}
+                <div class="news_info">
+                    <p>{{ el.content }}</p>
+                    <h3>{{ el.title }}</h3>
+                </div>
+            </div>
+        {% endfor %}
+
+    </main>
+
+{% endblock %}

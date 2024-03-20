@@ -1,0 +1,105 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'main/img/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    {% block style %}  {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="top_header">
+            <div class="li_logo">
+                <a href="#" class="header_list"><img src="{% static 'main/img/list_ico.png' %}" alt="full_list" class="size_png"></a>
+                <a href="{% url 'home' %}" class="header_logo">
+                    <img src="{% static 'main/img/logo.png' %}" alt="logo">
+                    <span> DanaTube </span>
+                </a>
+            </div>
+            <div class="search_form">
+                <div class="search_form_left">
+                    <input type="search" name="s" id="search" placeholder="Введите запрос">
+                    <a href="#"><img src="{% static 'main/img/keyboard.png' %}" alt="keyboard" class="size_png"></a>
+                </div>
+                <div class="search_form_right">
+                    <a href="#"><img src="{% static 'main/img/search.png' %}" alt="search" class="size_png"></a>
+                </div>
+                <div class="search_form_mic">
+                    <a href="#"><img src="{% static 'main/img/micro_white.png' %}" alt="micro" class="size_png"></a>
+                </div>
+            </div>
+            <div class="user">
+                <a href="#"> <img src="{% static 'main/img/cam_white.png' %}" alt=""> </a>
+                <a href="#"> <img src="{% static 'main/img/bell.png' %}" alt=""> </a>
+                <a href="#"> <img src="{% static 'main/img/ava.png' %}" alt=""> </a>
+            </div>
+        </div>
+        <nav>
+            <div class="nav_main">
+                <a href="{% url 'home' %}" class="nav_style">
+                    <img src="{% static 'main/img/home.png' %}" alt="home" class="size_png">
+                    <span> Главная </span>
+                </a>
+                <a href="">
+                    <img src="" alt="">
+                    <span> Подписки </span>
+                </a>
+            </div>
+            <div class="nav_user">
+                <a class="header_nav-title" href="{% url 'user' %}"> Вы > </a>
+                <a href="" class="user_story">
+                    <img src="" alt="">
+                    <span> История </span>
+                </a>
+                <a href="" class="user_later">
+                    <img src="" alt="">
+                    <span> Смотреть позже </span>
+                </a>
+                <a href="" class="user_liked">
+                    <img src="" alt="">
+                    <span> Понравившиеся </span>
+                </a>
+            </div>
+            <div class="nav_sub">
+                <span class="header_nav-title"> Подписки </span>
+            </div>
+            <div class="nav_setlist">
+                <a class="setlist_setting">
+                    <img src="" alt="">
+                    <span> Настройки </span>
+                </a>
+                <a class="setlist_complaints">
+                    <img src="" alt="">
+                    <span> Жалобы </span>
+                </a>
+                <a class="setlist_reference">
+                    <img src="" alt="">
+                    <span> Справка </span>
+                </a>
+                <a class="setlist_review">
+                    <img src="" alt="">
+                    <span> Отправить отзыв </span>
+                </a>
+            </div>
+            <div class="nav_footer">
+                <div class="footer_toplist">
+
+                </div>
+                <div class="footer_buttonlist">
+
+                </div>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    {% block body %}  {% endblock %}
+</body>
+</html>
