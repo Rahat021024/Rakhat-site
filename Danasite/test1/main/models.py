@@ -16,6 +16,20 @@ class Danatube(models.Model):
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
 
+class User(models.Model):
+    userName = models.CharField(max_length=40)
+    ava = models.ImageField(upload_to='ava/%Y/%m/%d')
+    biographi = models.TextField(blank=True)
+    birthday = models.DateField()
+
+    def __str__(self):
+        return self.userName
+
+    class Meta:
+        ordering = ['userName']
+        verbose_name = 'Имя пользователь'
+        verbose_name_plural = 'Имя пользователи'
+
 
 
 
